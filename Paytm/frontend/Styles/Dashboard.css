@@ -1,0 +1,90 @@
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.dashboard-loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.dashboard-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.dashboard-email {
+  color: #6b7280;
+}
+
+.wallet-card {
+  background: linear-gradient(135deg, #007bff, #0056d2);
+  color: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.wallet-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.wallet-balance {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-send {
+  background-color: #22c55e;
+  color: white;
+}
+
+.btn-send:hover {
+  background-color: #16a34a;
+}
+
+.btn-logout {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-logout:hover {
+  background-color: #dc2626;
+}
