@@ -1,9 +1,15 @@
 .dashboard-container {
-  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: #f3f4f6;
-  padding: 40px 20px;
+  padding: 100px 20px 40px 20px;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
 }
 
 .dashboard-wrapper {
@@ -12,11 +18,16 @@
 }
 
 .dashboard-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
+  background-color: #f3f4f6;
 }
 
 .dashboard-card {

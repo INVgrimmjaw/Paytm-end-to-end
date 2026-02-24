@@ -1,4 +1,8 @@
 .home-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
   background: linear-gradient(135deg, #00baf2, #002970);
   display: flex;

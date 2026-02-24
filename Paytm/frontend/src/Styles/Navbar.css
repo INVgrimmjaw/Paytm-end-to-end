@@ -1,5 +1,8 @@
 .navbar {
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   padding: 15px 40px;
   background-color: #002970;
   display: flex;
@@ -7,6 +10,7 @@
   align-items: center;
   color: white;
   box-sizing: border-box;
+  z-index: 1000;
 }
 
 .navbar-logo {

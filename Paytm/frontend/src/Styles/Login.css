@@ -1,4 +1,8 @@
-.signup-container {
+.login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
   background: linear-gradient(135deg, #00baf2, #002970);
   display: flex;
@@ -7,7 +11,7 @@
   padding: 20px;
 }
 
-.signup-wrapper {
+.login-wrapper {
   background: white;
   padding: 40px 35px;
   border-radius: 18px;
@@ -16,7 +20,7 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.signup-title {
+.login-title {
   text-align: center;
   margin-bottom: 25px;
   font-size: 24px;
@@ -24,13 +28,13 @@
   color: #002970;
 }
 
-.signup-form {
+.login-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.signup-input {
+.login-input {
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -39,49 +43,43 @@
   transition: 0.2s ease;
 }
 
-.signup-input:focus {
+.login-input:focus {
   border-color: #00baf2;
 }
 
-.signup-btn {
+.login-btn {
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background-color: #002970;
+  background-color: #00baf2;
   color: white;
   font-size: 15px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
-.signup-btn:hover {
-  background-color: #001f4d;
+.login-btn:hover {
+  background-color: #0095c8;
 }
 
-.signup-error {
+.login-error {
   color: #ef4444;
   font-size: 13px;
   text-align: center;
 }
 
-.signup-success {
-  color: #22c55e;
-  font-size: 13px;
-  text-align: center;
-}
-
-.signup-footer {
+.login-footer {
   margin-top: 18px;
   text-align: center;
   font-size: 14px;
 }
 
-.signup-footer span {
+.login-footer span {
   color: #00baf2;
   cursor: pointer;
   font-weight: 500;
 }
 
-.signup-footer span:hover {
+.login-footer span:hover {
   text-decoration: underline;
 }
