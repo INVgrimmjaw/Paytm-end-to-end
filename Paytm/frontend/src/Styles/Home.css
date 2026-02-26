@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #00baf2, #002970);
+  background: linear-gradient(135deg, #f0f0f0, #e4e4e4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,57 +12,53 @@
 }
 
 .home-wrapper {
-  background: white;
-  padding: 50px 40px;
-  border-radius: 20px;
+  background: #f9f9f9;
+  padding: 55px 45px;
+  border-radius: 22px;
   text-align: center;
   width: 100%;
-  max-width: 450px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  max-width: 460px;
+  border: 1px solid #dcdcdc;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  color: #222222;
 }
 
 .home-title {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: #002970;
+  margin-bottom: 12px;
+  color: #222222;
 }
 
 .home-subtitle {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 30px;
+  font-size: 15px;
+  color: #666666;
+  margin-bottom: 35px;
 }
 
 .home-actions {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .home-btn {
-  padding: 12px;
-  border-radius: 12px;
-  border: none;
+  padding: 14px 24px;
+  border-radius: 999px;
   font-size: 15px;
   cursor: pointer;
   transition: 0.3s ease;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #222;
+  font-weight: 500;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.home-btn.primary {
-  background-color: #00baf2;
-  color: white;
-}
-
-.home-btn.primary:hover {
-  background-color: #0095c8;
-}
-
-.home-btn.secondary {
-  background-color: #002970;
-  color: white;
-}
-
-.home-btn.secondary:hover {
-  background-color: #001f4d;
+.home-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }

@@ -4,19 +4,23 @@
   left: 0;
   width: 100vw;
   padding: 15px 40px;
-  background-color: #002970;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: #ffffff;
   box-sizing: border-box;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-logo {
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+  color: #ffffff;
 }
 
 .navbar-links {
@@ -26,7 +30,7 @@
 }
 
 .nav-link {
-  color: white;
+  color: #cccccc;
   text-decoration: none;
   font-size: 14px;
   cursor: pointer;
@@ -36,25 +40,29 @@
 }
 
 .nav-link:hover {
-  opacity: 0.8;
+  color: #ffffff;
 }
 
 .signup-btn {
-  background-color: #00baf2;
+  background: #2a2a2a;
   padding: 6px 14px;
   border-radius: 8px;
+  color: #ffffff;
+  border: 1px solid #444;
 }
 
 .signup-btn:hover {
-  background-color: #0095c8;
+  background: #3a3a3a;
 }
 
 .logout-btn {
-  background-color: #ef4444;
+  background: #111111;
   padding: 6px 14px;
   border-radius: 8px;
+  color: #ffffff;
+  border: 1px solid #333;
 }
 
 .logout-btn:hover {
-  background-color: #dc2626;
+  background: #1a1a1a;
 }

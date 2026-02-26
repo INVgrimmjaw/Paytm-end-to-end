@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import LightRays from "@/components/LightRays";
 import "../Styles/Home.css";
 
 const Home = () => {
@@ -6,6 +7,10 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      <div className="light-rays-bg">
+        <LightRays />
+      </div>
+
       <div className="home-wrapper">
         <h1 className="home-title">Paytm Clone</h1>
         <p className="home-subtitle">
