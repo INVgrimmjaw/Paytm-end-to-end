@@ -99,3 +99,93 @@
 .btn-logout:hover {
   background-color: #dc2626;
 }
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4b0082, #1a0033);
+  color: white;
+}
+
+.dashboard-navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav-links button:hover {
+  opacity: 0.7;
+}
+
+.dashboard-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.dashboard-hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.wallet-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  min-width: 250px;
+  text-align: center;
+}
+
+.wallet-card p {
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.quick-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.quick-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.dashboard-loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
