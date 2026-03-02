@@ -12,20 +12,29 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo" onClick={() => navigate("/")}>
-        Paytm Clone
+      <div className="navbar-left" onClick={() => navigate("/")}>
+        <span className="logo-icon">₹</span>
+        <span className="logo-text">Paytm Clone</span>
       </div>
 
-      <div className="navbar-links">
+      <div className="navbar-center">
+        <button>Company</button>
+        <button>Our Solutions</button>
+        <button>Investor Relations</button>
+        <button>Contact Us</button>
+        <button>Trust & Safety</button>
+      </div>
+
+      <div className="navbar-right">
         {!token ? (
           <>
-            <Link to="/login" className="nav-link">Login</Link>
-            <Link to="/signup" className="nav-link signup-btn">Signup</Link>
+            <Link to="/login" className="nav-btn">Login</Link>
+            <Link to="/signup" className="nav-btn primary">Signup</Link>
           </>
         ) : (
           <>
-            <Link to="/dashboard" className="nav-link">Dashboard</Link>
-            <button onClick={handleLogout} className="nav-link logout-btn">
+            <Link to="/dashboard" className="nav-btn">Dashboard</Link>
+            <button onClick={handleLogout} className="nav-btn primary">
               Logout
             </button>
           </>

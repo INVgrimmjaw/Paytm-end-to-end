@@ -11,26 +11,34 @@ const Home = () => {
         <LightRays />
       </div>
 
-      <div className="home-wrapper">
-        <h1 className="home-title">Paytm Clone</h1>
-        <p className="home-subtitle">
-          Fast, secure and seamless digital payments
-        </p>
+      <div className="home-content">
+        <div className="home-text">
+          <h1 className="home-title">
+            Simple, Fast & Secure
+            <br />
+            Digital Payments
+          </h1>
 
-        <div className="home-actions">
-          <button
-            className="home-btn primary"
-            onClick={() => navigate("/login")}
-          >
-            Login
-          </button>
+          <p className="home-subtitle">
+            Experience seamless UPI transfers, instant payments,
+            and secure transactions — all in one place.
+          </p>
 
-          <button
-            className="home-btn secondary"
-            onClick={() => navigate("/signup")}
-          >
-            Create Account
-          </button>
+          <div className="home-actions">
+            <button
+              className="home-btn primary"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </button>
+
+            <button
+              className="home-btn secondary"
+              onClick={() => navigate("/signup")}
+            >
+              Create Account
+            </button>
+          </div>
         </div>
       </div>
     </div>
