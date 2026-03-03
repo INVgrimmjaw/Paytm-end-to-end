@@ -5,50 +5,67 @@ import "../Styles/SendMoney.css";
 const SendMoney = () => {
   const navigate = useNavigate();
 
-  const [recipientEmail, setRecipientEmail] = useState<string>("");
-  const [amount, setAmount] = useState<number>(0);
-  const [message, setMessage] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [recipientEmail, setRecipientEmail] = useState("");
+  const [amount, setAmount] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleTransfer = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setMessage("");
 
+    if (!recipientEmail || !amount || Number(amount) <= 0) {
+      setError("Please enter valid details");
+      return;
+    }
+
     try {
+      setLoading(true);
       const token = localStorage.getItem("token");
 
-      const response = await fetch("http://localhost:3000/api/transaction/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          recipientEmail,
-          amount,
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:3000/api/transaction/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            recipientEmail,
+            amount: Number(amount),
+          }),
+        }
+      );
 
       const data = await response.json();
 
       if (!response.ok) {
         setError(data.message || "Transaction failed");
+        setLoading(false);
         return;
       }
 
       setMessage("Money sent successfully");
       setRecipientEmail("");
-      setAmount(0);
-    } catch (err) {
+      setAmount("");
+    } catch {
       setError("Something went wrong");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="send-container">
-      <div className="send-wrapper">
-        <h2 className="send-title">Send Money</h2>
+      <div className="send-card">
+
+        <div className="send-header">
+          <h2>Send Money</h2>
+          <p>Transfer funds securely and instantly</p>
+        </div>
 
         <form onSubmit={handleTransfer} className="send-form">
           <input
@@ -65,7 +82,7 @@ const SendMoney = () => {
             placeholder="Amount"
             className="send-input"
             value={amount}
-            onChange={(e) => setAmount(Number(e.target.value))}
+            onChange={(e) => setAmount(e.target.value)}
             required
             min="1"
           />
@@ -73,14 +90,22 @@ const SendMoney = () => {
           {error && <p className="send-error">{error}</p>}
           {message && <p className="send-success">{message}</p>}
 
-          <button type="submit" className="send-btn">
-            Transfer
+          <button
+            type="submit"
+            className="send-btn"
+            disabled={loading}
+          >
+            {loading ? "Processing..." : "Transfer"}
           </button>
         </form>
 
-        <button className="back-btn" onClick={() => navigate("/dashboard")}>
+        <button
+          className="back-btn"
+          onClick={() => navigate("/dashboard")}
+        >
           Back to Dashboard
         </button>
+
       </div>
     </div>
   );
