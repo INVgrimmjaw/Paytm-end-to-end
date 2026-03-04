@@ -5,18 +5,26 @@ import "../Styles/Signup.css";
 const Signup = () => {
   const navigate = useNavigate();
 
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setMessage("");
 
+    if (!name || !email || !password) {
+      setError("Please fill all fields");
+      return;
+    }
+
     try {
+      setLoading(true);
+
       const response = await fetch("http://localhost:3000/api/auth/signup", {
         method: "POST",
         headers: {
@@ -29,6 +37,7 @@ const Signup = () => {
 
       if (!response.ok) {
         setError(data.message || "Signup failed");
+        setLoading(false);
         return;
       }
 
@@ -40,8 +49,10 @@ const Signup = () => {
       setTimeout(() => {
         navigate("/login");
       }, 1500);
-    } catch (err) {
+    } catch {
       setError("Something went wrong");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -81,14 +92,14 @@ const Signup = () => {
           {error && <p className="signup-error">{error}</p>}
           {message && <p className="signup-success">{message}</p>}
 
-          <button type="submit" className="signup-btn">
-            Sign Up
+          <button type="submit" className="signup-btn" disabled={loading}>
+            {loading ? "Creating Account..." : "Sign Up"}
           </button>
         </form>
 
         <p className="signup-footer">
-          Already have an account?{" "}
-          <span onClick={() => navigate("/login")}>Login</span>
+          Already have an account?
+          <span onClick={() => navigate("/login")}> Login</span>
         </p>
       </div>
     </div>

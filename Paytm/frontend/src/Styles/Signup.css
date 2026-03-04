@@ -1,88 +1,96 @@
 .signup-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(135deg, #00baf2, #002970);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #121220);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  color: white;
 }
 
 .signup-wrapper {
-  background: white;
-  padding: 40px 35px;
-  border-radius: 18px;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .signup-title {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
-  color: #002970;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .signup-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .signup-input {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
   font-size: 14px;
   outline: none;
-  transition: 0.2s ease;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.signup-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .signup-input:focus {
-  border-color: #00baf2;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .signup-btn {
-  padding: 12px;
-  border-radius: 10px;
+  padding: 14px;
+  border-radius: 12px;
   border: none;
-  background-color: #002970;
-  color: white;
-  font-size: 15px;
+  background: white;
+  color: black;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .signup-btn:hover {
-  background-color: #001f4d;
+  transform: translateY(-2px);
+}
+
+.signup-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .signup-error {
-  color: #ef4444;
+  color: #ff6b6b;
   font-size: 13px;
   text-align: center;
 }
 
 .signup-success {
-  color: #22c55e;
+  color: #4ade80;
   font-size: 13px;
   text-align: center;
 }
 
 .signup-footer {
-  margin-top: 18px;
+  margin-top: 20px;
   text-align: center;
   font-size: 14px;
+  opacity: 0.8;
 }
 
 .signup-footer span {
-  color: #00baf2;
   cursor: pointer;
+  margin-left: 4px;
   font-weight: 500;
 }
 
